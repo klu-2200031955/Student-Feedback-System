@@ -1,0 +1,69 @@
+.dashboard {
+  text-align: left;
+  margin: 20px 0px;
+}
+
+.dashboard h2 {
+  font-size: 18px;
+  margin-left: 240px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 40px); /* Default to full width for small screens */
+  max-width: 200px; /* Ensures stat does not exceed this width */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.stat p {
+  margin: 10px 0;
+}
+
+.stat .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.stat .more-info {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+/* Hover and 3D transition effects */
+.stat:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for medium screens (600px and up) */
+@media (min-width: 600px) {
+  .stat {
+    width: calc(50% - 40px); /* Two items per row for medium screens */
+  }
+}
+
+/* Media query for large screens (900px and up) */
+@media (min-width: 900px) {
+  .stat {
+    width: calc(25% - 40px); /* Four items per row for large screens */
+  }
+}

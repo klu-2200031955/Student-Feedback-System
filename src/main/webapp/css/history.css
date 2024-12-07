@@ -1,0 +1,79 @@
+.history-content {
+    padding: 20px;
+    text-align: left;
+    margin: 20px 200px;
+  }
+  
+  .history-content h2 {
+    color: #4a148c;
+    font-size: 24px;
+  }
+  
+  .record {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .record:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  }
+  
+  .record img {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .record img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  .record .details-head {
+    flex-grow: 1;
+    color: #2a016bc0;
+    text-align: left;
+    margin: 5px 0;
+    font-size: large;
+  }
+  
+  .record .details-body {
+    flex-grow: 1;
+    color: #3e3e3ec0;
+    text-align: left;
+    margin: 5px 0;
+    font-size: small;
+  }
+  
+  .record .status {
+    text-align: left;
+  }
+  
+  .record .status .active {
+    color: green;
+    margin-right: 60px;
+  }
+  
+  .record .status .expired {
+    margin-right: 55px;
+    color: red;
+  }
+  
+  .record .hrtag {
+    border-left: solid #1c1c1c5d;
+    border-radius: 90%;
+    height: 50px;
+    width: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  

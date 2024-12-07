@@ -1,0 +1,175 @@
+/* Main Banner */
+.main-banner {
+    background: url('.././images/editedhomeimg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 30px;
+    transition: background-position 0.4s ease;
+}
+
+.main-banner:hover {
+    background-position: center 10%;
+}
+
+.main-banner h1 {
+    font-size: 46px;
+    background-color: rgba(61, 61, 61, 0.8);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.main-banner h1:hover {
+    transform: scale(1.05);
+}
+
+/* Content Section */
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background: url('.././images/homeloginregis.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+.content .register, .content .login {
+    width: 45%;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+.content .register h2, .content .login h2 {
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.content .register .register-part{
+    margin: 100px;
+
+}
+.login-container {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #333;
+    border-color: #fff;
+    background-color: #383636;
+}
+
+.content .register p {
+    font-size: 16px;
+}
+.content .register button, .content .login button ,.content .login-container .form-group input[type="submit"]{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+.content .login-container .form-group {
+    margin-bottom: 20px;
+}
+
+.content .login-container .form-group input[type="number"],
+.content .login-container .form-group input[type="password"] {
+    width: 100%;
+    padding: 10px 3px;
+    border: 1px solid #a9a9a9;
+    border-radius: 2px;
+    background-color: #0b0b0b;
+    color: white;
+    font-size: medium;
+}
+
+.content .login-container .form-group button[type="submit"] {
+    width: 40%;
+    height: 40px;
+    background-color: #171817;
+    color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    border: solid #afafaf;
+    cursor: pointer;
+}
+
+.content .login-container .form-group button[type="submit"]:hover {
+    background-color: #f4f5f4;
+    color: black;
+    border: solid #0b0b0b;
+}
+
+
+
+.content .register button:hover, .content .login button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 40px 40px;
+    background: url('.././images/homeabout.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.about .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 70px 90px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+ .about .features .feature {
+    width: 50%;
+    padding: 60px;
+    background-color: #555;
+    border-radius: 10px;
+    margin: 10px;
+    color: #b8b1b1;
+    transition: transform 0.2s;
+    transform: translate(calc(var(--expand) * -6%), calc(var(--expand) * -6%));
+}
+.about .features .feature h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.about .features .feature p {
+    font-size: 17px;
+}
+.about .features .feature:hover {
+--expand: 1;
+color: #060505;
+background: #a0a000;
+}
+.about .features .feature:before,
+.about .features .feature:after {
+content: '';
+position: absolute;
+height: 100%;
+width: 100%;
+border: 2px solid #fff;
+top: 0;
+left: 5px;
+color: #060505;
+z-index: -1;
+}
+.about .features .feature:after {
+transform: translate(calc(var(--expand) * -2%), calc(var(--expand) * -2%));
+transition: transform 0.2s;
+}
+

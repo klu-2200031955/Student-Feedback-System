@@ -1,0 +1,57 @@
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.header, .about, .contact-container, .content, .footer, .profile-content, 
+.forms, .active-forms, .dasboard, .search-bar, .stats, .history-content {
+    animation: bounce 2s ease;
+    display: block;
+
+}
+
+
+
+/* Loading section  */
+.preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(1,1,1,0.5);
+    z-index: 10;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.preload.loaded {
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+.circle {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 3px solid white;
+    border-top-color: #ffffff; 
+    margin-bottom: 20px;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

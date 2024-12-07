@@ -1,0 +1,80 @@
+.content {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .content h1 {
+    color: #5a5a5a;
+    font-size: 36px;
+  }
+  
+  .content p {
+    color: #5a5a5a;
+    font-size: 18px;
+    margin: 20px 300px;
+    text-align: left;
+  }
+  
+  .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #0000008d;
+  }
+  
+  .form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #D8CFCF;
+    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Input hover/focus effect */
+  .form-container input:hover, 
+  .form-container textarea:hover, 
+  .form-container input:focus, 
+  .form-container textarea:focus {
+    background-color: #e0d7d7; /* Lighter background on hover */
+    border-color: #5a5a5a; /* Darker border on hover/focus */
+  }
+  
+  .form-container button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    margin-right: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .form-container .submit-btn {
+    background-color: #5a5a5a;
+    color: #fff;
+  }
+  
+  .form-container .clear-btn {
+    background-color: #5a5a5a;
+    color: #fff;
+  }
+  
+  /* Button hover effect */
+  .form-container button:hover {
+    background-color: #4a4a4a; /* Slightly darker on hover */
+    transform: scale(1.05); /* Small zoom on hover */
+  }
+  
+  /* Button active effect */
+  .form-container button:active {
+    transform: scale(0.98); /* Slight shrink on click */
+  }
+  

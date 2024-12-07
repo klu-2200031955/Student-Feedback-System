@@ -1,0 +1,93 @@
+.content {
+  flex-grow: 1;
+  padding: 0px 10px;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between; /* Ensures h2 is on the left, buttons on the right */
+  align-items: center; /* Vertically aligns the h2 and buttons */
+  margin-bottom: 20px;
+  padding: 0 60px; /* Adds left and right padding */
+}
+
+.content h2 {
+  color: #303f9f;
+  font-size: 24px; /* Remove margins to keep alignment clean */
+  padding: 0; /* Ensure no extra padding on h2 */
+  flex-grow: 1; /* Allow h2 to take available space on the left */
+}
+
+.content .button-container {
+  display: flex;
+  gap: 10px; /* Adds space between buttons */
+  margin-left: 0px; /* Pushes the button container to the right */
+
+}
+
+.content .button-container .edit-button {
+  padding: 8px 20px;
+  background-color: #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.content .button-container .edit-button:hover {
+  background-color: #676666;
+}
+
+.table-container {
+  margin: 0 auto;
+  width: 90%;
+  background: transparent;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #8f8f8f;
+  transition: background-color 0.3s ease;
+}
+
+th {
+  background-color: #b2dfdb96;
+}
+
+td {
+  background-color: #f7f7f7;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on table rows */
+tr:hover td {
+  background-color: #e0f7fa; /* Slightly lighter background on hover */
+}
+
+/* Action icons */
+.action-icons {
+  font-size: 17px;
+}
+
+.action-icons i {
+  margin: 0 5px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on action icons */
+.action-icons i:hover {
+  color: #00796b; /* Darker teal color on hover */
+  transform: scale(1.2); /* Slight zoom effect */
+}

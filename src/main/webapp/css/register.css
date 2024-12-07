@@ -1,0 +1,117 @@
+
+
+.register-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background: url('.././images/editedregisterbgimg.jpg') no-repeat center center ;
+    background-size: cover;
+    color: #fff;
+}
+
+.registration-form {
+    width: 400px; /* Adjusted to match the login width */
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #333;
+    border-color: #fff;
+    background-color: #383636;
+    align-items: center;
+}
+
+.registration-form h2 {
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 16px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"],
+.registration-form select {
+    width: 90%;
+    padding: 10px 3px;
+    border: 1px solid #a9a9a9;
+    border-radius: 2px;
+    background-color: #0b0b0b;
+    color: white;
+    font-size: medium;
+    margin-bottom: 20px;
+    margin-left: 16px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 25px;
+    margin-left: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #f4f5f4;
+    color: black;
+    border: solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.terms {
+    width: 45%; /* Matches the width of login terms */
+    margin-left: 20px; /* Space between form and terms */
+    background-color: transparent;
+    padding: 20px; /* Padding for the terms section */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.terms h2 {
+    font-size: 24px; /* Adjusted size for better hierarchy */
+    margin-bottom: 10px;
+}
+
+.terms p {
+    font-size: 16px; /* Consistent text size */
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+
+
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .registration-form,
+    .terms {
+        width: 100%;
+        margin: 10px 0;
+        padding: 20px;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="email"],
+    .registration-form input[type="password"] {
+        width: 100%;
+    }
+}
+
+
+.registration-form input[type="text"]:focus,
+.registration-form input[type="email"]:focus,
+.registration-form input[type="password"]:focus {
+    border-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
