@@ -1,6 +1,9 @@
-<%@page import="com.klef.jfsd.springboot.model.Faculty"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d51a71fd3650bc92b3d2edf8b83953f5c2de955e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,92 +35,80 @@
   <main>
   <div class="register-container">
     <div class="registration-form">
-     <h2>
-      Faculty Registration
-     </h2>
-     <%-- <form action="/facultyrequest" method="post">
-     <input placeholder="Enter FullName" id="fullname" name="fullname" type="text"/>
-     <input placeholder="Enter DOB (dd/MM/yyyy)" id="dob" name="dob" type="text"/>
-     <select name="gender" id="gender" required>
-     	<option value="">--Select--</option>
-		<option value="Male" ${faculty.gender == 'Male' ? 'selected' : ''}>Male</option>
-		<option value="Female" ${faculty.gender == 'Female' ? 'selected' : ''}>Female</option>
-		<option value="Other" ${faculty.gender == 'Other' ? 'selected' : ''}>Other</option>
-	 </select>
-     <input placeholder="Enter Email" id="email" name="email" type="email"/>
-     <input placeholder="Enter Department" id="department" name="department" type="text"/>
-     <input placeholder="Enter Phone Number" id="phnumber" name="phnumber" type="text"/>
-     <button class="submit-btn">Register</button>
-     </a>&nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
-     </form> --%>
-     
-     <form action="facultyrequest" method="post">
-	    <!-- Full Name: Required, allows only alphabets and spaces -->
-	    <input 
-	        placeholder="Enter FullName" 
-	        id="fullname" 
-	        name="fullname" 
-	        type="text" 
-	        pattern="[A-Za-z\s]+" 
-	        title="Full Name should contain only alphabets and spaces" 
-	        required 
-	    />
-	    
-	    <!-- Date of Birth: Calendar input -->
-	    <input 
-	        id="dob" 
-	        name="dob" 
-	        type="date" 
-	        max="2010-12-31" 
-	        title="Minimum Age required is 14"
-	        required 
-	    />
-	
-	    <!-- Gender: Dropdown with required attribute -->
-	    <select name="gender" id="gender" required>
-	        <option value="">Select Gender</option>
-	        <option value="Male" ${faculty.gender == 'Male' ? 'selected' : ''}>Male</option>
-	        <option value="Female" ${faculty.gender == 'Female' ? 'selected' : ''}>Female</option>
-	        <option value="Other" ${faculty.gender == 'Other' ? 'selected' : ''}>Other</option>
-	    </select>
-	
-	    <!-- Email: Required with email validation -->
-	    <input 
-	        placeholder="Enter Email" 
-	        id="email" 
-	        name="email" 
-	        type="email" 
-	        title="Enter a valid email address" 
-	        required 
-	    />
-	    
-	    <select name="department" id="department" required>
-	        <option value="">Select Department</option>
-	        <option value="CSE" ${faculty.department == 'CSE' ? 'selected' : ''}>CSE</option>
-	        <option value="ECE" ${faculty.department == 'ECE' ? 'selected' : ''}>ECE</option>
-	        <option value="EEE" ${faculty.department == 'EEE' ? 'selected' : ''}>EEE</option>
-	        <option value="Mech" ${faculty.department == 'Mech' ? 'selected' : ''}>Mech</option>
-	        <option value="Civil" ${faculty.department == 'Civil' ? 'selected' : ''}>Civil</option>
-	    </select>
-	
-	    <!-- Phone Number: Required, accepts 10-15 digits only -->
-	    <input 
-	        id="phnumber" 
-	        name="phnumber" 
-	        placeholder="Enter Phone Number (10 digits)" 
-	        maxlength="10" 
-	        pattern="[6789][0-9]{9}" 
-	        type="text" 
-	        title="Phone Number should be 10 digits"
-	        required 
-	    />
-	
-	    <!-- Submit Button -->
-	    <button class="submit-btn">Register</button>
-	    &nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
-	</form>
-     
-    </div>
+        <h2>Faculty Registration</h2>
+        <form action="/facultyrequest" method="post">
+          <!-- Full Name -->
+          <div class="input-box">
+            <input 
+              type="text" 
+              id="fullname" 
+              name="fullname" 
+              pattern="[A-Za-z\s]+" 
+              required
+              title="Full Name should contain only alphabets and spaces">
+            <label>Full Name</label>
+          </div>
+          <!-- Date of Birth -->
+          <div class="input-box">
+            <input 
+              id="dob" 
+              name="dob" 
+              type="date" 
+              max="2010-12-31" 
+              title="Minimum Age required is 14"
+              required 
+            />
+            <label>Date of Birth</label>
+          </div>
+          <!-- Gender -->
+          <div class="input-box">
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <label>Gender</label>
+          </div>
+          <!-- Email -->
+          <div class="input-box">
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              title="Enter a valid email address">
+            <label>Email</label>
+          </div>
+          <!-- Department -->
+          <div class="input-box">
+            <select id="department" name="department" required>
+              <option value="" disabled selected></option>
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="EEE">EEE</option>
+              <option value="Mech">Mech</option>
+              <option value="Civil">Civil</option>
+            </select>
+            <label>Department</label>
+          </div>
+          <!-- Phone Number -->
+          <div class="input-box">
+            <input 
+              type="text" 
+              id="phnumber" 
+              name="phnumber" 
+              pattern="[6789][0-9]{9}" 
+              maxlength="10" 
+              required
+              title="Phone Number should be 10 digits">
+            <label>Phone Number</label>
+          </div>
+          <!-- Submit Button -->
+          <button class="submit-btn">Register</button>
+          <p>Already have an account? <a class="login-link" href="/#login">Login</a></p>
+        </form>
+      </div>
     <div class="terms">
      <h2>
       Terms and Condition
