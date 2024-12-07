@@ -11,7 +11,7 @@ public class Course {
 
     @Id
     @Column(name = "id")
-    private int id;
+    private String id;
 
     @Column(name = "name", nullable = false, length = 50)
     private String name;
@@ -28,11 +28,11 @@ public class Course {
     @Column(name="status", nullable = false)
     private boolean status;
     
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

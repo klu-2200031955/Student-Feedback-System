@@ -48,7 +48,7 @@ public interface AdminService {
 	public Admin updateAdmin(Admin admin);
     public Admin getAdminById(int id);
 	
-    public Course getCourseById(int id);
+    public Course getCourseById(String id);
     public String updateCourse(Course c);
     
 

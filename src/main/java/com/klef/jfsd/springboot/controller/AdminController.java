@@ -149,7 +149,7 @@ public class AdminController {
     }
     
     @GetMapping("admineditcourse")
-    public ModelAndView admineditcourse(@RequestParam int id) {
+    public ModelAndView admineditcourse(@RequestParam String id) {
     	ModelAndView mv = new ModelAndView();
     	mv.addObject("admineditcourse");
     	Course c = adminService.getCourseById(id);
@@ -158,7 +158,7 @@ public class AdminController {
     }
     
     @PostMapping("updateCourse")
-    public ModelAndView updateCourse(@RequestParam int id,HttpServletRequest request) {
+    public ModelAndView updateCourse(@RequestParam String id,HttpServletRequest request) {
     	String name = request.getParameter("cname");
     	int credit = Integer.parseInt(request.getParameter("ccredit"));
     	String year = request.getParameter("cyear");
@@ -186,7 +186,7 @@ public class AdminController {
     
     @PostMapping("addCourse")
     public ModelAndView addCourse(HttpServletRequest request) {
-    	int id = Integer.parseInt(request.getParameter("cid"));
+    	String id = request.getParameter("cid");
     	String name = request.getParameter("cname");
     	int credit = Integer.parseInt(request.getParameter("ccredit"));
     	String year = request.getParameter("cyear");

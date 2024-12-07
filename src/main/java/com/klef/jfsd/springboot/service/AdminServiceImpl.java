@@ -378,7 +378,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public Course getCourseById(int id) {
+	public Course getCourseById(String id) {
 		return courseRepository.findById(id).get();
 	}
 
