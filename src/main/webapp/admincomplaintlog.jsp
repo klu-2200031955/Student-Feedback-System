@@ -53,6 +53,7 @@
         <a href="adminstudent">Student</a>
         <a href="adminfaculty">Faculty</a>
         <a href="admincourses">Course</a>
+        <a href="adminmapping">Mapping</a>
         <a href="adminpostfeedback">Post Feedback</a>
         <a href="admincomplaintlog">Complaint Logs</a>
        </div>

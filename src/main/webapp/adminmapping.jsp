@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="./css/adminhome.css"/>
   <link rel="stylesheet" href="./css/homesnavbar.css"/>
   <link rel="stylesheet" href="./css/homeactiveform.css"/>
+  <link rel="stylesheet" href="./css/mapping.css"/>
  </head>
  </head>
  <body>
@@ -57,8 +58,11 @@
         <a href="admincomplaintlog">Complaint Logs</a>
        </div>
        <div class="main-container-content-box">
-
-       <h1>Under Construction...!! :)</h1>
+	       <div class="mapping-content">
+	       	<p></p>
+	       	<a href="adminaddfacultymapping"><Button>Faculty Mapping</Button></a>
+	       	<a href="adminaddstudentmapping"><Button>Student Mapping</Button></a>
+	       </div>
 
       </div>
   

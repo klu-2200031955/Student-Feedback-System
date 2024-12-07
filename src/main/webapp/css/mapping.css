@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+
+/* MAPPING CONTAINERS */
+.mapping-content {
+    flex-grow: 1;
+    padding: 5px 50px;
+  }
+  
+  .mapping-content .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2%;
+  }
+  
+  .mapping-content h2 {
+    color: #303f9f;
+    text-align: left;
+    padding: px;
+    margin-left: 10%;
+  }
+  
+  .mapping-content .edit-button {
+    padding: 4px 20px;
+    background-color: #ccc;
+    border-radius: 50px 50px 0px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-right: 100px;
+  }
+  
+  .mapping-content .edit-button:hover {
+    background-color: #676666;
+  }
+  
+  .mapping-card {
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 10%;
+    max-width: 80%;
+  }
+  
+  .mapping-card .mapping-section {
+    display: flex;
+    width: 70%;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .mapping-card .mapping-section .mapping-info {
+    flex: 1;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin: 10px;
+    min-width: 150px;
+  }
+  
+  .mapping-info h3 {
+    color: #050f55c5;
+    text-align: left;
+  }
+  
+  .mapping-info label {
+    display: inline-block;
+    width: 120px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  
+  .mapping-info table {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .mapping-info table tr td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .mapping-info table tr td:first-child {
+    width: 20%;
+    font-size: small;
+  }
+  
+  .mapping-info table tr td:last-child {
+    width: 80%;
+  }
+  
+  .mapping-info table tr td input,
+  .mapping-info table tr td select {
+    padding: 8px 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure checkboxes align neatly */
+  .mapping-info table tr td .checkbox-container {
+    display: flex;
+    gap: 10px; /* Space between checkboxes */
+    flex-wrap: wrap; /* Wrap to the next line if necessary */
+    margin-top: 10px; /* Space from above */
+  }
+  
+  .mapping-info table tr td .checkbox-container label {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* Space between checkbox and text */
+    font-size: 14px; /* Adjust font size if needed */
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    accent-color: #5b5a5a; /* Optional: Customize checkbox color */
+  }
+  
+  
+  .mapping-info table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .mapping-info input:disabled {
+    background: transparent;
+    color: #000000ea;
+  }
+  
+  input[type="submit"],
+  input[type="reset"] {
+    background-color: #616263;
+    border: none;
+    color: white;
+    padding: 6px 0px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 60px;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: #939393;
+    color: black;
+    margin-top: 20px;
+  }

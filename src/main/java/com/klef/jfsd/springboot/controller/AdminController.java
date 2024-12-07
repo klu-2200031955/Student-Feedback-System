@@ -468,4 +468,39 @@ public class AdminController {
     	mv.addObject("adminpostfeedback");
     	return mv;
     }
+    
+    @GetMapping("adminmapping")
+    public ModelAndView adminmapping() {
+    	ModelAndView mv = new ModelAndView();
+    	mv.addObject("adminmapping");
+    	return mv;
+    }
+    
+    @GetMapping("adminaddfacultymapping")
+    public ModelAndView adminaddfacultymapping() {
+    	ModelAndView mv = new ModelAndView();
+    	mv.addObject("adminaddfacultymapping");
+    	return mv;
+    }
+    
+    @GetMapping("adminfacultymapping")
+    public ModelAndView adminfacultymapping() {
+    	ModelAndView mv = new ModelAndView();
+    	mv.addObject("adminfacultymapping");
+    	return mv;
+    }
+    
+    @GetMapping("adminaddstudentmapping")
+    public ModelAndView adminaddstudentmapping() {
+    	ModelAndView mv = new ModelAndView();
+    	mv.addObject("adminaddstudentmapping");
+    	return mv;
+    }
+    
+    @GetMapping("adminstudentmapping")
+    public ModelAndView adminstudentmapping() {
+    	ModelAndView mv = new ModelAndView();
+    	mv.addObject("adminstudentmapping");
+    	return mv;
+    }
 }

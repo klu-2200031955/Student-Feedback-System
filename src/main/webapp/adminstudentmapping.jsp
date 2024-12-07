@@ -1,6 +1,7 @@
 <%@page import="com.klef.jfsd.springboot.model.Admin"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 
 <%
@@ -10,7 +11,6 @@
 		return;
 	}
 %>
-
 <html>
  <head>
   <title>FeedCraft Admin Dashboard</title>
@@ -22,7 +22,7 @@
   <script defer src="./preload.js"></script>
   <link rel="stylesheet" href="./css/adminhome.css"/>
   <link rel="stylesheet" href="./css/homesnavbar.css"/>
-  <link rel="stylesheet" href="./css/myprofile.css"/>
+  <link rel="stylesheet" href="./css/admintables.css"/>
  </head>
  <body>
   <div id="preload" class="preload" data-preaload>
@@ -59,48 +59,49 @@
        
 
        <div class="main-container-content-box">
-        <div class="profile-content">
-            <form action="addCourse" method="post">
-            <div class="header-row">
-                <h2>Adding New Course</h2>
+        <div class="content"> 
+          <div class="content-header">
+            <h2>Student Mapped Courses</h2>
+            <div class="button-container">
+              <a href="adminaddcourse"><button class="edit-button">Add Mapping</button></a>
             </div>
-
-            <div class="profile-card">
-                <div class="profile-section">
-                    <div class="profile-info">
-                            <table>
-                                <tr>
-                                    <td><label for="cid">ID:</label></td>
-                                    <td><input type="text" id="cid" name="cid"/></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="cname">Name:</label></td>
-                                    <td><input type="text" id="cname" name="cname" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="ccredit">Credit:</label></td>
-                                    <td><input type="text" id="ccredit" name="ccredit"/></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="cyear">Year:</label></td>
-                                    <td><input type="text" id="cyear" name="cyear" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="cdept">Department:</label></td>
-                                    <td><input type="text" id="cdept" name="cdept" /></td>
-                                </tr>
-                            </table>
-                            <div>
-                                <a href="#"><input type="submit" value="Add" style="width: 20%;" /></a>
-                                <input type="reset" value="Clear" style="width: 20%;" />
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    </div>
-
+          </div>
+          <div class="table-container">
+            <table>
+             <thead>
+              <tr>
+               <th>S.no.</th>
+               <th>ID.no.</th>
+               <th>Course ID</th>
+               <th>Course Name</th>
+               <th>Student ID</th>
+               <th>Student Name</th>
+               <th>Section</th>
+               <th>L-T-P-S</th>
+               <th>Action</th>
+              </tr>
+             </thead>
+             <tbody>
+                <c:forEach items="${studentmappinglist}" var="studentmappinglist" varStatus="status">
+                	<tr>
+                		<td><c:out value="${status.index + 1}"></c:out></td>
+                		<td><c:out value="${studentmappinglist.id}"></c:out></td>
+                		<td><c:out value="${studentmappinglist.coursename}"></c:out></td>
+                		<td><c:out value="${studentmappinglist.courseid}"></c:out></td>
+                		<td><c:out value="${studentmappinglist.facultyid}"></c:out></td>
+                		<td><c:out value="${studentmappinglist.facultyname}"></c:out></td>
+                		<td><c:out value="${studentmappinglist.section}"></c:out></td>
+                		<td><c:out value="${studentmappinglist.ltps}"></c:out></td>
+                		<td class="action-icons">
+		                  <a href="#"><i style="color:red;cursor: pointer" class="fas fa-trash"></i></a>
+		                </td>
+                	</tr>
+                </c:forEach>
+              </tbody>
+            </table>
+           </div>
+         </div>
+       </div>
 
   
   
