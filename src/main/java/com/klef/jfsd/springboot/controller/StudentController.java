@@ -143,4 +143,48 @@ public class StudentController {
 //    		return mv;
 //    	}
 //    }
+    
+    @GetMapping("studentcurrentresponses")
+    public ModelAndView studentcurrentresponses() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studentcurrentresponses");
+        return mv;
+    }
+    
+    @GetMapping("studenteditprofile")
+    public ModelAndView studenteditprofile() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studenteditprofile");
+        return mv;
+    }
+    
+    @GetMapping("studentprofile")
+    public ModelAndView studentprofile() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studentprofile");
+        return mv;
+    }
+    
+    @GetMapping("studenthome")
+    public ModelAndView studenthome() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studenthome");
+        return mv;
+    }
+    
+    @GetMapping("studenthelp")
+    public ModelAndView studenthelp() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studenthelp");
+        return mv;
+    }
+    
+    @GetMapping("studenthistory")
+    public ModelAndView studenthistory() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studenthistory");
+        return mv;
+    }
+    
+    
 }

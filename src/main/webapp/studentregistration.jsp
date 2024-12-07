@@ -39,7 +39,7 @@
 	     <input placeholder="Enter FullName" id="fullname" name="fullname" type="text"/>
      <input placeholder="Enter DOB (dd/MM/yyyy)" id="dob" name="dob" type="text"/>
      <select name="gender" id="gender" required>
-     	<option value="">--Select--</option>
+     	<option value="">Select Gender</option>
 		<option value="Male" ${student.gender == 'Male' ? 'selected' : ''}>Male</option>
 		<option value="Female" ${student.gender == 'Female' ? 'selected' : ''}>Female</option>
 		<option value="Other" ${student.gender == 'Other' ? 'selected' : ''}>Other</option>
@@ -48,7 +48,7 @@
      <input placeholder="Enter Department" id="department" name="department" type="text"/>
      <input placeholder="Enter Phone Number" id="phnumber" name="phnumber" type="text"/>
      <button class="submit-btn">Register</button>
-     </a>&nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="home#login">Login</a>
+	 &nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
      </form>
     </div>
     <div class="terms">

@@ -48,7 +48,7 @@
      <input placeholder="Enter Department" id="department" name="department" type="text"/>
      <input placeholder="Enter Phone Number" id="phnumber" name="phnumber" type="text"/>
      <button class="submit-btn">Register</button>
-     </a>&nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="home#login">Login</a>
+     </a>&nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
      </form>
     </div>
     <div class="terms">

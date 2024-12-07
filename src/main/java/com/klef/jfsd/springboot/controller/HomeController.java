@@ -35,7 +35,7 @@ public class HomeController {
         mv.setViewName("home");
         return mv;
     }
-
+    
     @GetMapping("logout")
     public ModelAndView logout(HttpServletRequest request) {
         HttpSession session = request.getSession();

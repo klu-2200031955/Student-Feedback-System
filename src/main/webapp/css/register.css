@@ -1,5 +1,3 @@
-
-
 .register-container {
     display: flex;
     justify-content: space-around;
@@ -78,6 +76,13 @@
     margin-bottom: 10px; /* Space between paragraphs */
 }
 
+.login-link{
+	color: white;
+}
+
+.login-link:hover{
+	color: blue;
+}
 
 
 @media (max-width: 768px) {
