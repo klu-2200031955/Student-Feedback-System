@@ -5,7 +5,7 @@
 <%
     Admin admin = (Admin) session.getAttribute("admin");
     if (admin == null) {
-        response.sendRedirect("adminsessionexpiry.jsp");
+        response.sendRedirect("sessionexpiry.jsp");
         return;
     }
 %>

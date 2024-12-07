@@ -4,6 +4,10 @@
 <!DOCTYPE html>
 <%
     Faculty faculty = (Faculty) request.getAttribute("faculty");
+	if(faculty == null){
+		response.sendRedirect("sessionexpiry.jsp");
+		return;
+	}
 %>
 <html>
 <head>

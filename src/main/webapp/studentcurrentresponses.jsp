@@ -1,4 +1,15 @@
-<html>
+<%@page import="com.klef.jfsd.springboot.model.Student"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+    Student student = (Student) request.getAttribute("student");
+	if(student == null){
+		response.sendRedirect("sessionexpiry.jsp");
+		return;
+	}
+%>
+<!DOCTYPE html>
+<html lang="en">>
  <head>
   <title>FeedCraft Student Responses</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -124,7 +135,7 @@
 
   
   <footer>
-    <p>Copyright ©K-University 2024-25 SDP Project. All rights reserved.</p>
+    <p>Copyright Â©K-University 2024-25 SDP Project. All rights reserved.</p>
   </footer>
  </body>
 </html>
