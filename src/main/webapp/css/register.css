@@ -25,11 +25,26 @@
     margin-left: 16px;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Inverts the color to make it white */
+}
+
+.registration-form input[type="text"]::placeholder,
+.registration-form input[type="email"]::placeholder,
+.registration-form input[type="password"]::placeholder,
+.registration-form select::placeholder {
+    color: white; /* Changes the placeholder text color to white */
+    opacity: 1; /* Ensures the placeholder is fully opaque */
+}
+
 .registration-form input[type="text"],
+.registration-form input[type="date"],
 .registration-form input[type="email"],
 .registration-form input[type="password"],
 .registration-form select {
-    width: 90%;
+    display: block; /* Ensures each input is on a separate line */
+    width: calc(100% - 32px); /* Adjust to maintain consistent width with padding */
+    max-width: 400px; /* Optional: Set a max-width for larger screens */
     padding: 10px 3px;
     border: 1px solid #a9a9a9;
     border-radius: 2px;
@@ -37,7 +52,8 @@
     color: white;
     font-size: medium;
     margin-bottom: 20px;
-    margin-left: 16px;
+    margin-left: auto; /* Center-align */
+    margin-right: auto; 
 }
 
 .submit-btn {

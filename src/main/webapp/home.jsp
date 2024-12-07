@@ -11,6 +11,14 @@
   <link rel="icon" href="./images/LOGO img.png" type="image/png">
   <link rel="stylesheet" href="./css/preload.css"/>
   <script defer src="./preload.js"></script>
+  <!-- Alert for Login Failed -->
+	<script>
+	    // Check if the server has sent an error message
+	    const errorMessage = "${error}";
+	    if (errorMessage) {
+	        alert(errorMessage);
+	    }
+	</script>
   <link rel="stylesheet" href="./css/navbar.css"/>
   <link rel="stylesheet" href="./css/home.css"/>
 </head>
@@ -58,6 +66,7 @@
         </div>
       </div>
     </div>
+    
     <div class="about" id="aboutpage">
       <h2>About Us</h2>
       <div class="features">

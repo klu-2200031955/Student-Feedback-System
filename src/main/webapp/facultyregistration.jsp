@@ -35,7 +35,7 @@
      <h2>
       Faculty Registration
      </h2>
-     <form action="/facultyrequest" method="post">
+     <%-- <form action="/facultyrequest" method="post">
      <input placeholder="Enter FullName" id="fullname" name="fullname" type="text"/>
      <input placeholder="Enter DOB (dd/MM/yyyy)" id="dob" name="dob" type="text"/>
      <select name="gender" id="gender" required>
@@ -49,7 +49,74 @@
      <input placeholder="Enter Phone Number" id="phnumber" name="phnumber" type="text"/>
      <button class="submit-btn">Register</button>
      </a>&nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
-     </form>
+     </form> --%>
+     
+     <form action="facultyrequest" method="post">
+	    <!-- Full Name: Required, allows only alphabets and spaces -->
+	    <input 
+	        placeholder="Enter FullName" 
+	        id="fullname" 
+	        name="fullname" 
+	        type="text" 
+	        pattern="[A-Za-z\s]+" 
+	        title="Full Name should contain only alphabets and spaces" 
+	        required 
+	    />
+	    
+	    <!-- Date of Birth: Calendar input -->
+	    <input 
+	        id="dob" 
+	        name="dob" 
+	        type="date" 
+	        max="2010-12-31" 
+	        title="Minimum Age required is 14"
+	        required 
+	    />
+	
+	    <!-- Gender: Dropdown with required attribute -->
+	    <select name="gender" id="gender" required>
+	        <option value="">Select Gender</option>
+	        <option value="Male" ${faculty.gender == 'Male' ? 'selected' : ''}>Male</option>
+	        <option value="Female" ${faculty.gender == 'Female' ? 'selected' : ''}>Female</option>
+	        <option value="Other" ${faculty.gender == 'Other' ? 'selected' : ''}>Other</option>
+	    </select>
+	
+	    <!-- Email: Required with email validation -->
+	    <input 
+	        placeholder="Enter Email" 
+	        id="email" 
+	        name="email" 
+	        type="email" 
+	        title="Enter a valid email address" 
+	        required 
+	    />
+	    
+	    <select name="department" id="department" required>
+	        <option value="">Select Department</option>
+	        <option value="CSE" ${faculty.department == 'CSE' ? 'selected' : ''}>CSE</option>
+	        <option value="ECE" ${faculty.department == 'ECE' ? 'selected' : ''}>ECE</option>
+	        <option value="EEE" ${faculty.department == 'EEE' ? 'selected' : ''}>EEE</option>
+	        <option value="Mech" ${faculty.department == 'Mech' ? 'selected' : ''}>Mech</option>
+	        <option value="Civil" ${faculty.department == 'Civil' ? 'selected' : ''}>Civil</option>
+	    </select>
+	
+	    <!-- Phone Number: Required, accepts 10-15 digits only -->
+	    <input 
+	        id="phnumber" 
+	        name="phnumber" 
+	        placeholder="Enter Phone Number (10 digits)" 
+	        maxlength="10" 
+	        pattern="[6789][0-9]{9}" 
+	        type="text" 
+	        title="Phone Number should be 10 digits"
+	        required 
+	    />
+	
+	    <!-- Submit Button -->
+	    <button class="submit-btn">Register</button>
+	    &nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
+	</form>
+     
     </div>
     <div class="terms">
      <h2>

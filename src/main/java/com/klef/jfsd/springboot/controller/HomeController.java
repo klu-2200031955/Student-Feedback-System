@@ -36,6 +36,13 @@ public class HomeController {
         return mv;
     }
     
+    @GetMapping("home")
+    public ModelAndView home1() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("home");
+        return mv;
+    }
+    
     @GetMapping("logout")
     public ModelAndView logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
@@ -74,8 +81,9 @@ public class HomeController {
     		session.setAttribute("student", student);
     		mv.setViewName("studenthome");
     	}else {
-    		mv.setViewName("loginfailed");
-    	}
+            mv.setViewName("home");
+            mv.addObject("error", "Invalid ID or Password. Please try again.");
+        }
     	return mv;
     }
 }
