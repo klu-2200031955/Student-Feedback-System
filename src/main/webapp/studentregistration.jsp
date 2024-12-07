@@ -21,116 +21,106 @@
     <div class="circle"></div>
     <p class="text">Loading...</p>  
   </div>
-  <div class="header" id="header">
+
+  <header class="header" id="header">
     <a href="#home"><img alt="Logo" height="40" src="./images/LOGO.png"/></a>
     <nav>
       <a href="/">Home</a>
       <a href="#contactus">Contact us</a>
     </nav>
     <a class="login-btn" href="/#login">Login</a>
-  </div>
+  </header>
+
   <main>
-  <div class="register-container">
-    <div class="registration-form">
-     <h2>
-      Student Registration
-     </h2>
-      <%-- <form action="/studentrequest" method="post">
-	     <input placeholder="Enter FullName" id="fullname" name="fullname" type="text"/>
-     <input placeholder="Enter DOB (dd/MM/yyyy)" id="dob" name="dob" type="text"/>
-     <select name="gender" id="gender" required>
-     	<option value="">Select Gender</option>
-		<option value="Male" ${student.gender == 'Male' ? 'selected' : ''}>Male</option>
-		<option value="Female" ${student.gender == 'Female' ? 'selected' : ''}>Female</option>
-		<option value="Other" ${student.gender == 'Other' ? 'selected' : ''}>Other</option>
-	 </select>
-     <input placeholder="Enter Email" id="email" name="email" type="email"/>
-     <input placeholder="Enter Department" id="department" name="department" type="text"/>
-     <input placeholder="Enter Phone Number" id="phnumber" name="phnumber" type="text"/>
-     <button class="submit-btn">Register</button>
-	 &nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
-     </form> --%>
-     
-     <form action="/studentrequest" method="post">
-	    <!-- Full Name: Required, allows only alphabets and spaces -->
-	    <input 
-	        placeholder="Enter FullName" 
-	        id="fullname" 
-	        name="fullname" 
-	        type="text" 
-	        pattern="[A-Za-z\s]+" 
-	        title="Full Name should contain only alphabets and spaces" 
-	        required 
-	    />
-	    
-	    <!-- Date of Birth: Calendar input -->
-	    <input 
-	        id="dob" 
-	        name="dob" 
-	        type="date" 
-	        max="2010-12-31" 
-	        required 
-	    />
-	
-	    <!-- Gender: Dropdown with required attribute -->
-	    <select name="gender" id="gender" required>
-	        <option value="">Select Gender</option>
-	        <option value="Male" ${student.gender == 'Male' ? 'selected' : ''}>Male</option>
-	        <option value="Female" ${student.gender == 'Female' ? 'selected' : ''}>Female</option>
-	        <option value="Other" ${student.gender == 'Other' ? 'selected' : ''}>Other</option>
-	    </select>
-	
-	    <!-- Email: Required with email validation -->
-	    <input 
-	        placeholder="Enter Email" 
-	        id="email" 
-	        name="email" 
-	        type="email" 
-	        title="Enter a valid email address" 
-	        required 
-	    />
-	    
-	    <select name="department" id="department" required>
-	        <option value="">Select Department</option>
-	        <option value="CSE" ${student.department == 'CSE' ? 'selected' : ''}>CSE</option>
-	        <option value="ECE" ${student.department == 'ECE' ? 'selected' : ''}>ECE</option>
-	        <option value="EEE" ${student.department == 'EEE' ? 'selected' : ''}>EEE</option>
-	        <option value="Mech" ${student.department == 'Mech' ? 'selected' : ''}>Mech</option>
-	        <option value="Civil" ${student.department == 'Civil' ? 'selected' : ''}>Civil</option>
-	    </select>
-	
-	    <!-- Phone Number: Required, accepts 10-15 digits only -->
-	    <input 
-	        id="phnumber" 
-	        name="phnumber" 
-	        placeholder="Enter Phone Number (10 digits)" 
-	        maxlength="10" 
-	        pattern="[6789][0-9]{9}" 
-	        type="text" 
-	        title="Phone Number should be 10 digits"
-	        required 
-	    />
-	
-	    <!-- Submit Button -->
-	    <button class="submit-btn">Register</button>
-	    &nbsp;&nbsp;Already acc, exist?&nbsp;<a class="login-link" href="/#login">Login</a>
-	</form>
-     
+    <div class="register-container">
+      <div class="registration-form">
+        <h2>Student Registration</h2>
+        <form action="/studentrequest" method="post">
+          <!-- Full Name -->
+          <div class="input-box">
+            <input 
+              type="text" 
+              id="fullname" 
+              name="fullname" 
+              pattern="[A-Za-z\s]+" 
+              required
+              title="Full Name should contain only alphabets and spaces">
+            <label>Full Name</label>
+          </div>
+          <!-- Date of Birth -->
+          <div class="input-box">
+            <input 
+              id="dob" 
+              name="dob" 
+              type="date" 
+              max="2010-12-31" 
+              title="Minimum Age required is 14"
+              required 
+            />
+            <label>Date of Birth</label>
+          </div>
+          <!-- Gender -->
+          <div class="input-box">
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <label>Gender</label>
+          </div>
+          <!-- Email -->
+          <div class="input-box">
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              title="Enter a valid email address">
+            <label>Email</label>
+          </div>
+          <!-- Department -->
+          <div class="input-box">
+            <select id="department" name="department" required>
+              <option value="" disabled selected></option>
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="EEE">EEE</option>
+              <option value="Mech">Mech</option>
+              <option value="Civil">Civil</option>
+            </select>
+            <label>Department</label>
+          </div>
+          <!-- Phone Number -->
+          <div class="input-box">
+            <input 
+              type="text" 
+              id="phnumber" 
+              name="phnumber" 
+              pattern="[6789][0-9]{9}" 
+              maxlength="10" 
+              required
+              title="Phone Number should be 10 digits">
+            <label>Phone Number</label>
+          </div>
+          <!-- Submit Button -->
+          <button class="submit-btn">Register</button>
+          <p>Already have an account? <a class="login-link" href="/#login">Login</a></p>
+        </form>
+      </div>
+      <div class="terms">
+        <h2>Terms and Condition</h2>
+        <p>By registering for the Student Feedback System, you agree to the following terms and conditions:</p>
+        <ul>
+          <li>Inaccurate or false information may lead to account suspension or termination.</li>
+          <li>You are responsible for maintaining the confidentiality of your password and account information.</li>
+          <li>The system is intended for academic purposes, and misuse can result in account suspension or legal action.</li>
+          <li>Your personal data is securely stored and will not be shared without consent, except as required by law.</li>
+          <li>We reserve the right to modify these terms at any time, and your continued use of the system signifies acceptance of the changes.</li>
+        </ul>
+      </div>
     </div>
-    <div class="terms">
-     <h2>
-      Terms and Condition
-     </h2>
-     <p>By registering for the Student Feedback System, you agree to the following terms and conditions:</p>
-     <p>Inaccurate or false information may lead to account suspension or termination. You are responsible for maintaining the \
-        confidentiality of your password and account information, and any unauthorized use must be reported immediately.</p>
-     <p>The system is intended for academic purposes, and misuse can result in account suspension or legal action. Only eligible students,
-         as determined by the admin, are allowed to participate, and users are expected to provide honest and constructive feedback. Your 
-         personal data is securely stored and will not be shared without consent, except as required by law.</p>
-     <p>We reserve the right to modify these terms at any time, and your continued use of the system signifies acceptance of the changes. 
-        Passwords must meet the strength requirements, and if forgotten, you can reset them through your registered email.</p>
-    </div>
-   </div>
+
     <div class="contact-container" id="contactus">
       <div class="contact-info">
         <h1 style="font-size: xxx-large;">Contact Us!</h1>
@@ -145,7 +135,7 @@
             <input type="text" id="subject" name="subject" placeholder="Enter subject">
           </div>
           <div class="input-group">
-            <textarea id="message" name="message" style="color: white;" placeholder="Enter your message"></textarea>
+            <textarea id="message" name="message" placeholder="Enter your message"></textarea>
           </div>
           <div class="input-group">
             <input type="submit" value="Submit">
@@ -153,10 +143,10 @@
         </form>
       </div>
     </div>
-    
-  <footer>
-    <p>Copyright ©K-University 2024-25 SDP Project. All rights reserved.</p>
-  </footer>
   </main>
+
+  <footer>
+    <p>Copyright © K-University 2024-25 SDP Project. All rights reserved.</p>
+  </footer>
 </body>
 </html>

@@ -1,3 +1,37 @@
+.input-box {
+  position: relative;
+  margin: 25px 0;
+}
+
+.input-box input:focus,
+.input-box input:valid,
+.input-box select:focus {
+  border-color: #ffff;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box select:focus ~ label {
+  top: 1px;
+  font-size: 0.8em;
+  background-color: #383636;
+  padding: 0 6px;
+  color: #ffff;
+}
+
+
+
 .register-container {
     display: flex;
     justify-content: space-around;
@@ -25,8 +59,30 @@
     margin-left: 16px;
 }
 
+
+.registration-form input[type="date"]{
+	display: block; /* Ensures each input is on a separate line */
+    width: calc(100% - 32px); /* Adjust to maintain consistent width with padding */
+    max-width: 400px; /* Optional: Set a max-width for larger screens */
+    padding: 10px 3px;
+    border: 1px solid #a9a9a9;
+    border-radius: 2px;
+    background-color: #0b0b0b;
+    color: black;
+    font-size: medium;
+    margin-bottom: 20px;
+    margin-left: auto; /* Center-align */
+    margin-right: auto; 
+}
+
+.registration-form input[type="date"]:focus {
+	
+	color:white;
+	
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1); /* Inverts the color to make it white */
+    filter: invert(1); /* Ensures visibility on dark themes */
 }
 
 .registration-form input[type="text"]::placeholder,
@@ -38,7 +94,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .registration-form input[type="text"],
-.registration-form input[type="date"],
 .registration-form input[type="email"],
 .registration-form input[type="password"],
 .registration-form select {
