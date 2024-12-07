@@ -63,7 +63,7 @@
           <div class="content-header">
             <h2>Student Mapped Courses</h2>
             <div class="button-container">
-              <a href="adminaddcourse"><button class="edit-button">Add Mapping</button></a>
+              <a href="adminaddstudentmapping"><button class="edit-button">Add Mapping</button></a>
             </div>
           </div>
           <div class="table-container">

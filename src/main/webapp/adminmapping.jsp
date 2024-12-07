@@ -60,8 +60,8 @@
        <div class="main-container-content-box">
 	       <div class="mapping-content">
 	       	<p></p>
-	       	<a href="adminaddfacultymapping"><Button>Faculty Mapping</Button></a>
-	       	<a href="adminaddstudentmapping"><Button>Student Mapping</Button></a>
+	       	<a href="adminfacultymapping"><Button>Faculty Mapping</Button></a>
+	       	<a href="adminstudentmapping"><Button>Student Mapping</Button></a>
 	       </div>
 
       </div>
