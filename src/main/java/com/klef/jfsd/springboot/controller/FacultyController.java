@@ -58,18 +58,19 @@ public class FacultyController {
         String sdob = request.getParameter("dob");
         String dob = "";
         try {
-            SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd"); // Matches HTML date input format
             inputFormat.setLenient(false);
             java.util.Date parsedDate = inputFormat.parse(sdob);
             SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy");
             dob = outputFormat.format(parsedDate);
         } catch (ParseException e) {
             e.printStackTrace();
-            ModelAndView errorView = new ModelAndView("error");
-            errorView.addObject("message", "Invalid date format. Please use dd/MM/yyyy.");
+            ModelAndView errorView = new ModelAndView("facultyregistration");
+            errorView.addObject("message", "Invalid date format. Please select a valid date.");
             return errorView;
         }
 
+        // Remaining fields
         String gender = request.getParameter("gender");
         String department = request.getParameter("department");
         String email = request.getParameter("email");
@@ -79,7 +80,7 @@ public class FacultyController {
         String address = "";
         String linkedin = "";
         String facebook = "";
-        String password = "sfb" + sdob;
+        String password = "sfb" + dob.replace("-", ""); // Example password generation
 
         FacultyRequest frq = new FacultyRequest();
         frq.setId(id); 
@@ -98,11 +99,13 @@ public class FacultyController {
 
         String msg = facultyService.facultyrequest(frq).toString();
         sendFacultyRegMail(frq);
+
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", msg);
         mv.setViewName("home");
         return mv;
     }
+
 
     public void sendFacultyRegMail(FacultyRequest frq) {
         SimpleMailMessage sm = new SimpleMailMessage();

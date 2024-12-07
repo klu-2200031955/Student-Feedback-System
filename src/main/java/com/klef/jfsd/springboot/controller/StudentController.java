@@ -61,17 +61,21 @@ public class StudentController {
         String sdob = request.getParameter("dob");
         String dob = "";
         try {
-            SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+            // Adjust input format to match the expected input from the HTML form
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
             inputFormat.setLenient(false);
             java.util.Date parsedDate = inputFormat.parse(sdob);
+
+            // Format to desired output format
             SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy");
             dob = outputFormat.format(parsedDate);
         } catch (ParseException e) {
             e.printStackTrace();
             ModelAndView errorView = new ModelAndView("error");
-            errorView.addObject("message", "Invalid date format. Please use dd/MM/yyyy.");
+            errorView.addObject("message", "Invalid date format. Please use yyyy-MM-dd.");
             return errorView;
         }
+
 
         String gender = request.getParameter("gender");
         String department = request.getParameter("department");
@@ -87,7 +91,7 @@ public class StudentController {
         StudentRequest srq = new StudentRequest();
         srq.setId(id);
         srq.setName(name);
-        srq.setDob(dob);
+        srq.setDob(sdob);
         srq.setGender(gender);
         srq.setDepartment(department);
         srq.setEmail(email);
