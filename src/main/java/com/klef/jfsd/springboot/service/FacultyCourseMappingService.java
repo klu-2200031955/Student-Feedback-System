@@ -8,4 +8,5 @@ public interface FacultyCourseMappingService {
 	public List<FacultyCourseMapping> viewAllFCM();
 	public String insertFCM(FacultyCourseMapping FCM);
 	public String deleteFCM(int fid);
+	public List<FacultyCourseMapping> getFacultyBycourseId(String cid);
 }

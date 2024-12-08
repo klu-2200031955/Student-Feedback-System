@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Year;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,11 +14,16 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.klef.jfsd.springboot.model.FacultyCourseMapping;
 import com.klef.jfsd.springboot.model.Student;
+import com.klef.jfsd.springboot.model.StudentCourseMapping;
 import com.klef.jfsd.springboot.model.StudentRequest;
+import com.klef.jfsd.springboot.service.FacultyCourseMappingService;
+import com.klef.jfsd.springboot.service.StudentCourseMappingService;
 import com.klef.jfsd.springboot.service.StudentService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,6 +34,12 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+    
+    @Autowired
+    private FacultyCourseMappingService facultyCourseMappingService;
+    
+    @Autowired
+    private StudentCourseMappingService studentCourseMappingService;
     
     @Autowired
 	private JavaMailSender jms;
@@ -190,5 +203,31 @@ public class StudentController {
         return mv;
     }
     
-    
+    @GetMapping("studentcoursemapping")
+    public ModelAndView studentcoursemapping() {
+        List<StudentCourseMapping> scmlist = studentCourseMappingService.viewAllSCM();
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studentcoursemapping");
+        mv.addObject("studentmappinglist", scmlist);
+        return mv;
+    }
+
+    @GetMapping("studentaddcourse")
+    public ModelAndView studentaddcourse() {
+        List<FacultyCourseMapping> fcmlist = facultyCourseMappingService.viewAllFCM();
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("studentaddcourse");
+        mv.addObject("fcmlist", fcmlist);
+        return mv;
+    }
+
+    @GetMapping("getFacultyByCourse")
+    @ResponseBody
+    public List<FacultyCourseMapping> getFacultyByCourse(@RequestParam("cid") String cid) {
+        // Fetching faculty based on course ID and name
+        List<FacultyCourseMapping> facultyList = (List<FacultyCourseMapping>) facultyCourseMappingService.getFacultyBycourseId(cid);
+        System.out.println(facultyList);
+        return facultyList;
+    }
+
 }

@@ -1,13 +1,6 @@
 <%@page import="com.klef.jfsd.springboot.model.Student"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-    Student student = (Student) request.getAttribute("student");
-	if(student == null){
-		response.sendRedirect("sessionexpiry.jsp");
-		return;
-	}
-%>
 <!DOCTYPE html>
 <html>
  <head>

@@ -1,13 +1,6 @@
 <%@page import="com.klef.jfsd.springboot.model.Student"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-    Student student = (Student) request.getAttribute("student");
-	if(student == null){
-		response.sendRedirect("sessionexpiry.jsp");
-		return;
-	}
-%>
 <!DOCTYPE html>
 <html>
  <head>
@@ -36,7 +29,7 @@
      </a>
      <ul class="dropdown">
       <li><a href="studentprofile">My Profile</a></li>
-      <li><a href="/" class="red-hover">Logout</a></li>
+      <li><a href="logout" class="red-hover">Logout</a></li>
      </ul>
     </li>
    </ul>
@@ -46,6 +39,7 @@
   <div class="nav">
    <a href="studenthome">Home</a>
    <a href="studentcurrentresponses">Responses</a>
+   <a href="studentcoursemapping">Mapping</a>
    <a href="studenthistory">History</a>
    <a href="studenthelp">Help</a>
   </div>

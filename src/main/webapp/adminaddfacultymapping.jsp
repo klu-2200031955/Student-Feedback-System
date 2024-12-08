@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
 <html>
  <head>
@@ -59,45 +60,45 @@
             <div class="mapping-card">
                 <div class="mapping-section">
                     <div class="mapping-info">
-                        <form>
+                        <form method="post" action="addfacultymapping">
                             <table>
                                 <tr>
                                     <td><label for="course">Course:</label></td>
                                     <td>
-                                        <select id="course">
-                                            <option value="cs">Computer Science</option>
-                                            <option value="math">Mathematics</option>
-                                            <option value="phy">Physics</option>
-                                            <option value="eng">English</option>
-                                        </select>
+                                        <select id="course" name="cid">
+										    <option value="">Select Course</option>
+										    <c:forEach var="course" items="${courselist}">
+										        <option value="${course.getId()}">${course.getId()} - ${course.getName()}</option>
+										    </c:forEach>
+										</select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="faculty">Faculty:</label></td>
                                     <td>
-                                        <select id="faculty">
-                                            <option value="john">Prof. John</option>
-                                            <option value="mary">Prof. Mary</option>
-                                            <option value="paul">Prof. Paul</option>
-                                            <option value="susan">Prof. Susan</option>
-                                        </select>
+                                        <select id="faculty" name="fid">
+										    <option value="">Select Faculty</option>
+										    <c:forEach var="faculty" items="${facultylist}">
+										        <option value="${faculty.getId()}">${faculty.getId()} - ${faculty.getName()}</option>
+										    </c:forEach>
+										</select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="preferences">Preferences:</label></td>
                                     <td colspan="4">
                                         <div class="checkbox-container">
-                                            <label><input type="checkbox" id="preference1" value="L" />Lecture</label>
-                                            <label><input type="checkbox" id="preference2" value="P" />Pratical</label>
-                                            <label><input type="checkbox" id="preference3" value="T" />Tutorial</label>
-                                            <label><input type="checkbox" id="preference4" value="S" />Skill</label>
-                                        </div>
+										    <label><input type="checkbox" name="components" value="L" />Lecture</label>
+										    <label><input type="checkbox" name="components" value="P" />Practical</label>
+										    <label><input type="checkbox" name="components" value="T" />Tutorial</label>
+										    <label><input type="checkbox" name="components" value="S" />Skill</label>
+										</div>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <td><label for="section">Section:</label></td>
-                                    <td><input type="number" id="section" /></td>
+                                    <td><input type="number" id="section" name="section" required/></td>
                                 </tr>
                             </table>
                             <div>

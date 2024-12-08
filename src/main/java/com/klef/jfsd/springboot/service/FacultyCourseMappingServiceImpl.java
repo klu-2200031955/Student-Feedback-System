@@ -39,4 +39,9 @@ public class FacultyCourseMappingServiceImpl implements FacultyCourseMappingServ
 		}		
 	}
 
+	@Override
+	public List<FacultyCourseMapping> getFacultyBycourseId(String cid) {
+		return facultyCourseMappingRepository.getFacultyByCid(cid);
+	}
+
 }

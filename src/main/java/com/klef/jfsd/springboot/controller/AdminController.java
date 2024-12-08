@@ -19,12 +19,16 @@ import org.springframework.web.bind.annotation.*;
 import com.klef.jfsd.springboot.model.Admin;
 import com.klef.jfsd.springboot.model.Course;
 import com.klef.jfsd.springboot.model.Faculty;
+import com.klef.jfsd.springboot.model.FacultyCourseMapping;
 import com.klef.jfsd.springboot.model.FacultyReject;
 import com.klef.jfsd.springboot.model.FacultyRequest;
+import com.klef.jfsd.springboot.model.FeedbackQuestions;
 import com.klef.jfsd.springboot.model.Student;
 import com.klef.jfsd.springboot.model.StudentReject;
 import com.klef.jfsd.springboot.model.StudentRequest;
+import com.klef.jfsd.springboot.repository.FeedbackQuestionsRepository;
 import com.klef.jfsd.springboot.service.AdminService;
+import com.klef.jfsd.springboot.service.FacultyCourseMappingService;
 import com.klef.jfsd.springboot.service.FacultyService;
 import com.klef.jfsd.springboot.service.StudentService;
 
@@ -42,6 +46,9 @@ public class AdminController {
     
     @Autowired
     private StudentService studentService;
+    
+    @Autowired
+    private FacultyCourseMappingService facultuCourseMappingService;
     
     @Autowired
    	private JavaMailSender jms;
@@ -462,33 +469,66 @@ public class AdminController {
         return mv;
     }
     
-    @GetMapping("adminpostfeedback")
-    public ModelAndView adminpostfeedback() {
+    
+    
+    @GetMapping("adminaddfacultymapping")
+    public ModelAndView adminaddfacultymapping() {
+    	List<Faculty> facultyList = adminService.viewAllFaculty();
+    	List<Course> courseList = adminService.viewAllCourses();
     	ModelAndView mv = new ModelAndView();
-    	mv.addObject("adminpostfeedback");
+    	mv.addObject("adminaddfacultymapping");
+    	mv.addObject("facultylist", facultyList);
+    	mv.addObject("courselist",courseList);
+    	return mv;
+    }
+    
+    @PostMapping("addfacultymapping")
+    public ModelAndView addfacultymapping(HttpServletRequest request,@RequestParam(value = "components", required = false) List<FacultyCourseMapping.Component> components) {
+    	int fmapid = (int)(Math.random() * 999) + 1;
+    	int facultyid = Integer.parseInt(request.getParameter("fid"));
+    	String fullname = facultyService.getFacultyById(facultyid).getName();
+    	String cid = request.getParameter("cid");
+    	String cname = adminService.getCourseById(cid).getName();
+    	int section = Integer.parseInt(request.getParameter("section"));
+    	
+    	FacultyCourseMapping FCM = new FacultyCourseMapping();
+    	
+    	FCM.setFmapId(fmapid);
+    	FCM.setFacultyId(facultyid);
+    	FCM.setFullName(fullname);
+    	FCM.setCid(cid);
+    	FCM.setCname(cname);
+    	FCM.setComponents(components);
+    	FCM.setSection(section);
+    	
+    	facultuCourseMappingService.insertFCM(FCM);
+    	
+    	ModelAndView mv = new ModelAndView();
+    	mv.setViewName("adminfacultymapping");
+    	List<FacultyCourseMapping> fcmlist = facultuCourseMappingService.viewAllFCM();
+    	mv.addObject("fcmlist", fcmlist);
     	return mv;
     }
     
     @GetMapping("adminmapping")
-    public ModelAndView adminmapping() {
-    	ModelAndView mv = new ModelAndView();
-    	mv.addObject("adminmapping");
-    	return mv;
-    }
-    
-    @GetMapping("adminaddfacultymapping")
-    public ModelAndView adminaddfacultymapping() {
-    	ModelAndView mv = new ModelAndView();
-    	mv.addObject("adminaddfacultymapping");
-    	return mv;
-    }
-    
-    @GetMapping("adminfacultymapping")
     public ModelAndView adminfacultymapping() {
     	ModelAndView mv = new ModelAndView();
-    	mv.addObject("adminfacultymapping");
+    	mv.setViewName("adminfacultymapping");
+    	List<FacultyCourseMapping> fcmlist = facultuCourseMappingService.viewAllFCM();
+    	mv.addObject("fcmlist", fcmlist);
     	return mv;
     }
+    
+    @GetMapping("deleteFCM")
+    public ModelAndView deleteFCM(@RequestParam("fid") int fid) {
+        String msg = facultuCourseMappingService.deleteFCM(fid); 
+        ModelAndView mv = new ModelAndView();
+        List<FacultyCourseMapping> fcmlist = facultuCourseMappingService.viewAllFCM(); 
+        mv.addObject("fcmlist", fcmlist); 
+        mv.setViewName("adminfacultymapping");
+        return mv;
+    }
+
     
     @GetMapping("adminaddstudentmapping")
     public ModelAndView adminaddstudentmapping() {
@@ -502,5 +542,23 @@ public class AdminController {
     	ModelAndView mv = new ModelAndView();
     	mv.addObject("adminstudentmapping");
     	return mv;
+    }
+    
+    @Autowired
+    private FeedbackQuestionsRepository feedbackQuestionsRepository;
+
+    
+    @GetMapping("adminpostfeedback")
+    public ModelAndView adminpostfeedback() {
+    	ModelAndView mv = new ModelAndView();
+    	mv.addObject("adminpostfeedback");
+    	return mv;
+    }
+
+    // Handle form submission
+    @PostMapping("submitFeedbackQuestions")
+    public String submitFeedbackQuestions(@ModelAttribute FeedbackQuestions feedbackQuestions) {
+        feedbackQuestionsRepository.save(feedbackQuestions);
+        return "redirect:/adminhome";  // Redirect to home page or other page after saving
     }
 }

@@ -12,16 +12,16 @@ public class FacultyCourseMapping {
     private int fmapId;
 
     @Column(name = "facultyid", nullable = false)
-    private String facultyId;
+    private int facultyId;
 
     @Column(name = "fullname", nullable = false)
     private String fullName;
 
-    @Column(name = "ccode", nullable = false)
-    private String cCode;
+    @Column(name = "cid", nullable = false)
+    private String cid;
 
-    @Column(name = "ctitle", nullable = false)
-    private String cTitle;
+    @Column(name = "cname", nullable = false)
+    private String cname;
 
     @ElementCollection
     @CollectionTable(name = "components", joinColumns = @JoinColumn(name = "fmapid"))
@@ -44,11 +44,11 @@ public class FacultyCourseMapping {
         this.fmapId = fmapId;
     }
 
-    public String getFacultyId() {
+    public int getFacultyId() {
         return facultyId;
     }
 
-    public void setFacultyId(String facultyId) {
+    public void setFacultyId(int facultyId) {
         this.facultyId = facultyId;
     }
 
@@ -60,20 +60,20 @@ public class FacultyCourseMapping {
         this.fullName = fullName;
     }
 
-    public String getCCode() {
-        return cCode;
+    public String getCid() {
+        return cid;
     }
 
-    public void setCCode(String cCode) {
-        this.cCode = cCode;
+    public void setCid(String cid) {
+        this.cid = cid;
     }
 
-    public String getCTitle() {
-        return cTitle;
+    public String getCname() {
+        return cname;
     }
 
-    public void setCTitle(String cTitle) {
-        this.cTitle = cTitle;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
     public List<Component> getComponents() {
@@ -91,4 +91,5 @@ public class FacultyCourseMapping {
     public void setSection(int section) {
         this.section = section;
     }
+    
 }

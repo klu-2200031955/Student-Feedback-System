@@ -72,28 +72,28 @@
               <tr>
                <th>S.no.</th>
                <th>ID.no.</th>
-               <th>Course ID</th>
-               <th>Course Name</th>
                <th>Faculty ID</th>
                <th>Faculty Name</th>
-               <th>Section</th>
+               <th>Course ID</th>
+               <th>Course Name</th>
                <th>L-T-P-S</th>
+               <th>Section</th>
                <th>Action</th>
               </tr>
              </thead>
              <tbody>
-                <c:forEach items="${facultymappinglist}" var="facultymappinglist" varStatus="status">
+                <c:forEach items="${fcmlist}" var="facultymappinglist" varStatus="status">
                 	<tr>
                 		<td><c:out value="${status.index + 1}"></c:out></td>
-                		<td><c:out value="${facultymappinglist.id}"></c:out></td>
-                		<td><c:out value="${facultymappinglist.coursename}"></c:out></td>
-                		<td><c:out value="${facultymappinglist.courseid}"></c:out></td>
-                		<td><c:out value="${facultymappinglist.facultyid}"></c:out></td>
-                		<td><c:out value="${facultymappinglist.facultyname}"></c:out></td>
-                		<td><c:out value="${facultymappinglist.section}"></c:out></td>
-                		<td><c:out value="${facultymappinglist.ltps}"></c:out></td>
+                		<td><c:out value="${facultymappinglist.fmapId}"></c:out></td>
+                		<td><c:out value="${facultymappinglist.facultyId}"></c:out></td>
+                		<td><c:out value="${facultymappinglist.fullName}"></c:out></td>
+                		<td><c:out value="${facultymappinglist.cid}"></c:out></td>
+                		<td><c:out value="${facultymappinglist.cname}"></c:out></td>
+                		<td><c:out value="${facultymappinglist.components}"></c:out></td>
+                		<td><c:out value="${facultymappinglist.section	}"></c:out></td>
                 		<td class="action-icons">
-		                  <a href="#"><i style="color:red;cursor: pointer" class="fas fa-trash"></i></a>
+		                  <a href="deleteFCM?fid=${facultymappinglist.fmapId}"><i style="color:red;cursor: pointer" class="fas fa-trash"></i></a>
 		                </td>
                 	</tr>
                 </c:forEach>
